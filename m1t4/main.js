@@ -27,7 +27,7 @@
 }
 
 {
-  const error = 'Вы ввели некорректные данные'
+  const error = 'Вы ввели некорректные данные';
 
   const title = prompt("Введите наименование товара: ");
   const quantity = Number.parseFloat(prompt("Введите кол-во: ").trim());
