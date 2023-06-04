@@ -1,14 +1,31 @@
-const getGCD = (x,y) => {
+// Напишите функцию getAveragePriceGoods
+// для получения средней цены товара
+//
+// Дан многомерный  массив:
+//
+// В каждом массиве из двух элементов, первым является количество товаров в чеке, а вторым — общая сумма.
+// Необходимо посчитать среднюю стоимость одного товара в магазине.
 
-    a = Math.abs(x);
-    b = Math.abs(y);
+const getAveragePriceGoods = (arr) => {
+    const x = arr.reduce((acc, el) => {
+        acc[0] += el[0];
+        acc[1] += el[1];
 
-    while (a != 0 && b != 0)
-    {
-        if (a > b) a %= b;
-        else b %= a;
-    }
-    return a | b;
+        return acc;
+    },[0,0]);
+
+    return x[1]/x[0];
 }
 
-console.log(getGCD(246,30))
+const allСashbox1 = [
+    [12, 4500], 
+    [7, 3210], 
+    [4, 650], 
+    [3, 1250], 
+    [9, 7830], 
+    [1, 990], 
+    [6, 13900], 
+    [1, 370]
+  ];
+
+  console.log(Math.round(getAveragePriceGoods(allСashbox1)*100)/100);

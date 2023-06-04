@@ -1,4 +1,9 @@
-const reverse = (str) => str.split("").reverse().join("");
+// Напишите функцию addPrefix 
+// Функция получает массив в виде параметров и возвращает массив с префиксами
+// После префикса пробел добавляется автоматически
 
-console.log(reverse('method takes a pattern and divides a String into an ordered list of substrings by'));
-console.log(reverse('Таким образом, допустимо создавать функции, даже если мы не планируем повторно использовать их'));
+const addPrefix = (arr, pr) => arr.map(((el) => pr + ' ' + el), pr);
+
+const names= ['Noah', 'Liam', 'Mason', 'Jacob', 'Robot', 'William', 'Ethan', 'Michael', 'Alexander'];
+
+console.log(addPrefix(names, 'Mr.'));
