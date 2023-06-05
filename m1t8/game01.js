@@ -8,7 +8,7 @@
 //     если пользователь ввел не число, то выводит “Введи число!”;
 //     если пользователь нажимает “Отмена”, то игра заканчивается.
 
-const botNumber = getRandomNumber(1,100); // см. Task01
+const botNumber = getRandomNumber(1,100); // см. Task02
 let input;
 
 while(true){

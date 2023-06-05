@@ -18,8 +18,8 @@
     input = prompt("Ваше второе число: ");
     range.push(Number.parseInt(input.trim()));
 
-    if(range[0]<range[1]) botNumber = getRandomNumber(range[0],range[1]) // см. Task01
-    else botNumber = getRandomNumber(range[1],range[0]); // см. Task01
+    if(range[0]<range[1]) botNumber = getRandomNumber(range[0],range[1]) // см. Task02
+    else botNumber = getRandomNumber(range[1],range[0]); // см. Task02
 
     let attempts = Math.round(0.3 * Math.abs(range[1]-range[0]));
     const userNumbers = [];
