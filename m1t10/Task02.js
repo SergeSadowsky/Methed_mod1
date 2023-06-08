@@ -1,3 +1,7 @@
+// функция возвращает число равное количеству уникальных ip-адресов
+
+const uniqueIPCount = (arr) => new Set([...listIPv4]).size;
+
 const listIPv4 = [
     "10.90.112.24",
     "10.64.146.250",
@@ -24445,10 +24449,9 @@ const listIPv4 = [
     "10.78.125.206",
     "10.0.32.20"
   ];
- 
+
 console.log(listIPv4.length)
 
-const listUniqueIPv4 = [...new Set([...listIPv4])];
+console.log(uniqueIPCount(listIPv4));
 
-console.log(listUniqueIPv4);
 
