@@ -76,7 +76,7 @@
     // очистить корзину
     clear() {
       this.items.length = 0;
-      this.totalPrice = 0;
+      // this.totalPrice = 0;
       this.count = 0;
     },
     // распечатать корзину
