@@ -22,9 +22,6 @@ const rectangle = {
     return this._width * this._height + 'см';
   },
 
-  /**
-   * @param {number} value
-   */
   set width(value) {
     if (typeof value !== 'number') {
       throw new Error('Значение не является числом!');
@@ -32,9 +29,6 @@ const rectangle = {
     this._width = value;
   },
 
-  /**
-   * @param {number} value
-   */
   set height(value) {
     if (typeof value !== 'number') {
       throw new Error('Значение не является числом!');

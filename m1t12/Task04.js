@@ -27,9 +27,6 @@ const cart = {
   _discount: '',
 
   // methods
-  /**
-   * @param {string} promocode
-   */
   set setDiscount(promocode) {
     if (promocode === 'METHED') {
       this._discount = 15;
