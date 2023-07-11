@@ -27,20 +27,63 @@
 'use strict';
 
 (function() {
-  const FIGURES_ENG = ['rock', 'scissors', 'paper'];
-  const FIGURES_RUS = ['камень', 'ножницы', 'бумага'];
+  const FIGURES = ['камень', 'ножницы', 'бумага'];
 
   const getRandomInInclusive = (min, max) => {
-
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min + 1) + min);
   };
 
-  const getFigure = (lang) => {
-
+  const getFigure = () => {
+    const input = prompt(`${FIGURES.join(', ')}?`);
+    if (input === null) {
+      if (confirm('Хотите выйти?')) return input;
+      return getFigure();
+    }
+    const index = FIGURES.findIndex(element => element.toLowerCase()
+      .startsWith(input.toLowerCase()));
+    if (index === -1) {
+      return getFigure();
+    }
+    return index;
   };
 
-  const game = (language) => {
+  const game = () => {
+    const scores = {
+      player: 0,
+      computer: 0,
+    };
 
+    return function start() {
+      const userFigure = getFigure();
+      if (userFigure !== null) {
+        const compFigure = getRandomInInclusive(0, FIGURES.length - 1);
+        let result;
+        if (userFigure === compFigure) {
+          result = 'Ничья.';
+          scores.computer++;
+          scores.player++;
+        } else {
+          const diff = userFigure - compFigure;
+          if (diff === -1 || diff === 2) {
+            result = 'Вы выиграли!!!';
+            scores.player += 2;
+          } else {
+            result = 'Вы проиграли. :(';
+            scores.computer += 2;
+          }
+        }
+        // eslint-disable-next-line max-len
+        alert(`Вы: ${FIGURES[userFigure]}\nКомпьютер: ${FIGURES[compFigure]}\n${result}`);
+        if (confirm('Сыграем ещё?')) {
+          return start();
+        }
+      }
+      // eslint-disable-next-line max-len
+      alert(`Счёт:\nПользователь: ${scores.player}\nКомпьютер: ${scores.computer}\n`);
+    };
   };
 
-  window.RPS = game;
+  window.gameRPS = game;
 })();
