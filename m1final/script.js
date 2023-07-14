@@ -1,4 +1,5 @@
-'use strict'
+'use strict';
 
-const startGame = window.marbleGameMid();
+const startGame = window.marbleGameSnr();
 startGame();
+
